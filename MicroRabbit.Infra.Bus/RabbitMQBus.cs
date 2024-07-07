@@ -6,14 +6,7 @@ using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using RabbitMQ.Client.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.AccessControl;
 using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace MicroRabbit.Infra.Bus
 {

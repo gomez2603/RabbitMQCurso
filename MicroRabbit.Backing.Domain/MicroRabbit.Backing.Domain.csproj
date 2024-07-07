@@ -10,7 +10,6 @@
     <Folder Include="CommandHandlers\" />
     <Folder Include="Commands\" />
     <Folder Include="Events\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Models\" />
     <Folder Include="EventsHandlers\" />
   </ItemGroup>

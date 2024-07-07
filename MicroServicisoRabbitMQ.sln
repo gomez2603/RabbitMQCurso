@@ -27,13 +27,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{86981EA5-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{83B2D43F-8B89-4E1A-B931-136861131752}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Banking.Api", "MicroRabbit.Banking.Api\MicroRabbit.Banking.Api.csproj", "{6B88AEE4-5AE3-4B00-9C09-17DD2CCCDA34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbit.Banking.Api", "MicroRabbit.Banking.Api\MicroRabbit.Banking.Api.csproj", "{6B88AEE4-5AE3-4B00-9C09-17DD2CCCDA34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicrroRabbit.Banking.Application", "MicrroRabbit.Banking.Application\MicrroRabbit.Banking.Application.csproj", "{83C009B7-E00E-4D33-BB69-BFE3073C9FD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicrroRabbit.Banking.Application", "MicrroRabbit.Banking.Application\MicrroRabbit.Banking.Application.csproj", "{83C009B7-E00E-4D33-BB69-BFE3073C9FD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Backing.Data", "MicroRabbit.Backing.Data\MicroRabbit.Backing.Data.csproj", "{AAD3E12C-ED0E-4F57-B984-3DEC243B27ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbit.Backing.Data", "MicroRabbit.Backing.Data\MicroRabbit.Backing.Data.csproj", "{AAD3E12C-ED0E-4F57-B984-3DEC243B27ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Backing.Domain", "MicroRabbit.Backing.Domain\MicroRabbit.Backing.Domain.csproj", "{D751741A-97CB-47F5-956C-DE9E4C087680}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbit.Backing.Domain", "MicroRabbit.Backing.Domain\MicroRabbit.Backing.Domain.csproj", "{D751741A-97CB-47F5-956C-DE9E4C087680}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,7 +78,7 @@ Global
 		{41FD00F0-6C4F-4CC2-AD67-24540622BB85} = {1435981A-B1CF-4319-A542-D46B879D2524}
 		{759B8247-D8A3-4419-BFB2-0B7D6302D77C} = {6B25262A-D2DA-4944-AACD-C248DC9A4521}
 		{B876CF15-9EE0-4C3F-8F89-903EA1482A90} = {F139BDC0-574A-4E52-AC04-BA2563DA3D81}
-		{6FF11046-6512-4541-9927-48C3C8D914A1} = {B876CF15-9EE0-4C3F-8F89-903EA1482A90}
+		{6FF11046-6512-4541-9927-48C3C8D914A1} = {74E4B717-23EB-467C-9D1E-A558EC96DD29}
 		{74E4B717-23EB-467C-9D1E-A558EC96DD29} = {B876CF15-9EE0-4C3F-8F89-903EA1482A90}
 		{86981EA5-A661-4331-A65B-C2DBD7C4DA3F} = {B876CF15-9EE0-4C3F-8F89-903EA1482A90}
 		{83B2D43F-8B89-4E1A-B931-136861131752} = {B876CF15-9EE0-4C3F-8F89-903EA1482A90}
