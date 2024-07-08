@@ -1,14 +1,14 @@
-using MediatR;
-using MicroRabbit.Backing.Data.Context;
-using MicroRabbit.Backing.Data.Repository;
-using MicroRabbit.Backing.Domain.CommandHandlers;
-using MicroRabbit.Backing.Domain.Commands;
-using MicroRabbit.Backing.Domain.Interfaces;
+using MicroRabbit.Transfer.Domain.Events;
+using MicroRabbit.Domain.Core.Bus;
 using MicroRabbit.Infra.Bus;
 using MicroRabbit.Infra.IoC;
+using MicroRabbit.Transfer.Application.Interfaces;
+using MicroRabbit.Transfer.Application.Services;
+using MicroRabbit.Transfer.Data.Context;
+using MicroRabbit.Transfer.Data.Repository;
+using MicroRabbit.Transfer.Domain.EventHandlers;
+using MicroRabbit.Transfer.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using MicrroRabbit.Banking.Application.Interfaces;
-using MicrroRabbit.Banking.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,9 +18,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<BankingDbContext>(options =>
+builder.Services.AddDbContext<TransferDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BankingDbConnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TransferDbConnection"));
 });
 
 
@@ -28,10 +28,13 @@ builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("R
 builder.Services.RegisterServices(builder.Configuration);
 
 
-builder.Services.AddTransient<IAccountService, AccountService>();
-builder.Services.AddTransient<IAccountRepository, AccountRepository>();
-builder.Services.AddTransient<BankingDbContext>();
-builder.Services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, TransferCommandHandler>();
+builder.Services.AddTransient<ITransferService, TransferService>();
+builder.Services.AddTransient<ITransferRepository, TransferRepository>();
+builder.Services.AddTransient<TransferDbContext>();
+ builder.Services.AddTransient<IEventHandler<TransferCreateEvent>, TransferEventHandler>();
+
+
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder => builder.AllowAnyOrigin()
@@ -41,6 +44,8 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+var eventBus = app.Services.GetRequiredService<IEventBus>();
+eventBus.Subscribe<TransferCreateEvent, TransferEventHandler>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
